@@ -18,7 +18,8 @@ boxes = st.radio("Pick a meal box", ["5 ingredients style", "swap the plate (no 
 def prompt_generate_ollama(prompt):
     response = ollama.chat(
         model='llama3',
-        messages=[{"role":"user", "content":prompt}]
+        messages=[{"role":"user", "content":prompt}],
+        stream = False
     )
     return response['message']['content']
 
